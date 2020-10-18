@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing page</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery3.1.0.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">Rayes.</div>
+            <ul>
+                <li class="active">Home</li>
+                <li>Our Products</li>
+                <li>About Us</li>
+                <li>Contact</li>
+            </ul>
+            <div class="search">
+                <i class="fa fa-search"></i>
+                <i class="fa fa-shopping-basket"></i>
+            </div>
+        </nav>
+        <div class="main_content">
+            <h1>Rayes</h1>
+            <div class="item">
+                <div class="product_details">
+                    <h2>Rayes Zeus X</h2>
+                    <p>Microphone Sound Studio </p>
+                    <div class="price">250<span>$</span></div>
+                </div>
+                <div class="cta_group">
+                    <div class="btn">More details</div>
+                    <div class="btn active">Add to cart</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="shadow">
+                    <img src="images/headphone.png">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>copyright @2020</p>
+            <div class="social">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-instagram"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        const hf = gsap.timeline();
+        hf.from(".container", {
+            duration: 1.2,
+            y: -200,
+            height: 0,
+            opacity: 0,
+            ease: "power3.inOut"
+        })
+            .from("nav", {
+                delay: -0.2,
+                y: -16,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.inOut"
+            })
+            .from([".product_details h2", ".product_details p", ".price"], {
+                delay: -0.2,
+                y: -40,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.easeInOut",
+                stagger: {
+                    amount: .3
+                }
+            })
+            .from(".shadow", {
+                delay: -0.4,
+                x: 20,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            })
+            .from("h1", {
+                delay: -0.4,
+                x: -20,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            })
+            .from([".btn"], {
+                delay: -0.2,
+                x: -40,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.ease",
+                stagger: {
+                    amount: .3
+                }
+            })
+
+            .from(".footer", {
+                delay: -0.2,
+                y: 16,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.inOut"
+            })
+    </script>
+</body>
+
+</html>
